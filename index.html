@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WAG Portal | MEP Office Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <div>
+        <p class="eyebrow">WAG Portal</p>
+        <h1>Unified workspace for MEP design teams</h1>
+        <p class="lede">Plan, monitor, and collaborate across projects with real-time awareness and light, fast UI crafted for both desktop and mobile.</p>
+        <div class="hero__actions">
+          <button class="btn primary" id="open-signin">Sign in</button>
+          <button class="btn ghost" data-scroll="office-pulse">View updates</button>
+        </div>
+        <div class="badge-row">
+          <span class="badge">General users: request, post, view</span>
+          <span class="badge">Managers: manage & approve</span>
+        </div>
+      </div>
+      <div class="summary-panel">
+        <h3>Today at a glance</h3>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <p class="summary-label">Active projects</p>
+            <p class="summary-value" id="summary-projects">8</p>
+            <p class="summary-sub">3 design reviews due</p>
+          </div>
+          <div class="summary-card">
+            <p class="summary-label">Bookings</p>
+            <p class="summary-value" id="summary-bookings">12</p>
+            <p class="summary-sub">Rooms & Zoom slots</p>
+          </div>
+          <div class="summary-card">
+            <p class="summary-label">Defects</p>
+            <p class="summary-value" id="summary-defects">2</p>
+            <p class="summary-sub">1 critical awaiting triage</p>
+          </div>
+          <div class="summary-card">
+            <p class="summary-label">Well & Green</p>
+            <p class="summary-value" id="summary-well">Stable</p>
+            <p class="summary-sub">Floor comfort & energy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="module-nav">
+      <button class="chip" data-scroll="office-pulse">Office Pulse</button>
+      <button class="chip" data-scroll="tech-workshop">Tech Workshop</button>
+      <button class="chip" data-scroll="shared-facility">Shared Facility</button>
+      <button class="chip" data-scroll="defect-tracker">Defect Tracker</button>
+      <button class="chip" data-scroll="leave-request">Leave Request</button>
+      <button class="chip" data-scroll="suggestion-box">Suggestion Box</button>
+      <button class="chip" data-scroll="well-green">Well &amp; Green</button>
+    </nav>
+
+    <section id="office-pulse" class="module">
+      <div class="module__header">
+        <div>
+          <p class="eyebrow">Office Pulse</p>
+          <h2>News, announcements & polls</h2>
+          <p class="lede">Stay aligned with compact updates, micro-polls, and AI highlights on sentiment and engagement.</p>
+        </div>
+        <div class="actions">
+          <button class="btn ghost" data-action="new" data-module="Office Pulse">New post</button>
+          <button class="btn ghost" data-action="poll" data-module="Office Pulse">Launch poll</button>
+        </div>
+      </div>
+      <div class="card-grid" id="pulse-list"></div>
+    </section>
+
+    <section id="tech-workshop" class="module">
+      <div class="module__header">
+        <div>
+          <p class="eyebrow">Tech Workshop</p>
+          <h2>Design coordination & reviews</h2>
+          <p class="lede">Coordinate MEP design tasks per building with checklists, review status, and collaborative notes.</p>
+        </div>
+        <div class="actions">
+          <button class="btn ghost" data-action="schedule" data-module="Tech Workshop">Schedule session</button>
+          <button class="btn ghost" data-action="add-checklist" data-module="Tech Workshop">Add checklist</button>
+        </div>
+      </div>
+      <div class="card-grid" id="workshop-list"></div>
+    </section>
+
+    <section id="shared-facility" class="module">
+      <div class="module__header">
+        <div>
+          <p class="eyebrow">Shared Facility</p>
+          <h2>Reserve rooms & Zoom accounts</h2>
+          <p class="lede">Quick booking with availability tags and confirmation in two taps.</p>
+        </div>
+        <div class="actions">
+          <button class="btn ghost" data-action="reserve" data-module="Shared Facility">Reserve</button>
+          <button class="btn ghost" data-action="view-calendar" data-module="Shared Facility">View calendar</button>
+        </div>
+      </div>
+      <div class="card-grid" id="facility-list"></div>
+    </section>
+
+    <section id="defect-tracker" class="module">
+      <div class="module__header">
+        <div>
+          <p class="eyebrow">Defect Tracker</p>
+          <h2>Equipment notifications</h2>
+          <p class="lede">Submit, triage, and track equipment defects with proof shots and status labels.</p>
+        </div>
+        <div class="actions">
+          <button class="btn ghost" data-action="report" data-module="Defect Tracker">Report defect</button>
+        </div>
+      </div>
+      <div class="card-grid" id="defect-list"></div>
+    </section>
+
+    <section id="leave-request" class="module">
+      <div class="module__header">
+        <div>
+          <p class="eyebrow">Leave Request</p>
+          <h2>Holiday, sick, business, else</h2>
+          <p class="lede">Streamlined forms with quick approval routing for managers.</p>
+        </div>
+        <div class="actions">
+          <button class="btn ghost" data-action="request" data-module="Leave Request">New request</button>
+        </div>
+      </div>
+      <div class="card-grid" id="leave-list"></div>
+    </section>
+
+    <section id="suggestion-box" class="module">
+      <div class="module__header">
+        <div>
+          <p class="eyebrow">Suggestion Box</p>
+          <h2>Ideas to improve the office</h2>
+          <p class="lede">Transparent queue with acknowledgement and AI-assisted clustering of themes.</p>
+        </div>
+        <div class="actions">
+          <button class="btn ghost" data-action="suggest" data-module="Suggestion Box">Submit idea</button>
+        </div>
+      </div>
+      <div class="card-grid" id="suggestion-list"></div>
+    </section>
+
+    <section id="well-green" class="module">
+      <div class="module__header">
+        <div>
+          <p class="eyebrow">Well &amp; Green</p>
+          <h2>Comfort & energy by floor</h2>
+          <p class="lede">Real-time PM2.5, CO, CO2, temperature, noise, illumination, plus power usage with AI recommendations.</p>
+        </div>
+        <div class="actions">
+          <button class="btn ghost" data-action="export" data-module="Well & Green">Export report</button>
+        </div>
+      </div>
+      <div class="well-grid" id="well-list"></div>
+    </section>
+  </main>
+
+  <div class="panel" id="detail-panel">
+    <div class="panel__header">
+      <div>
+        <p class="eyebrow" id="detail-type"></p>
+        <h3 id="detail-title"></h3>
+        <p class="lede" id="detail-meta"></p>
+      </div>
+      <button class="icon-btn" id="close-panel" aria-label="Close detail">×</button>
+    </div>
+    <img id="detail-image" alt="Record image" />
+    <p id="detail-description"></p>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="modal" id="signin-modal" role="dialog" aria-modal="true" aria-labelledby="signin-title">
+    <div class="modal__content">
+      <div class="modal__header">
+        <h3 id="signin-title">Sign in</h3>
+        <button class="icon-btn" id="close-signin">×</button>
+      </div>
+      <p class="lede">Choose a profile to continue. General users can request, post, and view; managers administer settings and approvals.</p>
+      <div class="signin-options">
+        <label class="radio-card">
+          <input type="radio" name="role" value="general" checked>
+          <div>
+            <p class="eyebrow">General</p>
+            <p>Post updates, reserve facilities, submit requests.</p>
+          </div>
+        </label>
+        <label class="radio-card">
+          <input type="radio" name="role" value="manager">
+          <div>
+            <p class="eyebrow">Manager</p>
+            <p>Approve, moderate, and configure modules.</p>
+          </div>
+        </label>
+      </div>
+      <form class="signin-form">
+        <label>Work email
+          <input type="email" placeholder="you@wag-office.com" required>
+        </label>
+        <label>Password
+          <input type="password" placeholder="••••••••" required>
+        </label>
+        <button type="submit" class="btn primary">Continue</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
